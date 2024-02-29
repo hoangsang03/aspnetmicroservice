@@ -9,12 +9,12 @@
     }
   },
   "profiles": {
-    "http": {
+    "Catalog.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      "launchBrowser": false, // if value is false then it will not start browser navigate to swagger
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5039",
+      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
