@@ -2,6 +2,7 @@
   "profiles": {
     "Catalog.API": {
       "commandName": "Project",
+      "launchBrowser": false, // if value is false then it will not start browser and then navigate to swagger
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
