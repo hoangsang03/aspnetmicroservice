@@ -1,8 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using Catalog.API.Models;
-using Marten;
-
-namespace Catalog.API.Products.CreateProduct;
+﻿namespace Catalog.API.Products.CreateProduct;
 
 public record CreateProductCommand(string Name, List<string> Category, string Description, string ImageFile, decimal Price)
     : ICommand<CreateProductResult>;
@@ -29,7 +25,7 @@ internal class CreateProductCommandHandler(IDocumentSession session)
 
         //save to database
         session.Store(product);
-        await session.SaveChangesAsync();
+        await session.SaveChangesAsync(cancellationToken);
 
         //return result
         return new CreateProductResult(product.Id);
