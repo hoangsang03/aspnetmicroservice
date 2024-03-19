@@ -1,3 +1,4 @@
+using BuildingBlocks.Mapping;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -46,6 +47,8 @@ builder.Services.AddMarten(opts =>
 {
     opts.Connection(builder.Configuration.GetConnectionString("PostgresqlDB")!);
 }).UseLightweightSessions();
+
+builder.Services.AddMappings();
 
 var app = builder.Build();
 
