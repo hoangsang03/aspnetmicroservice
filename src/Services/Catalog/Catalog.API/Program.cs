@@ -1,4 +1,4 @@
-using Catalog.API.Common.Mapping;
+using BuildingBlocks.Mapping;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
