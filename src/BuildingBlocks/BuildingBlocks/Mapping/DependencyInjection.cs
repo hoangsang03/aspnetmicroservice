@@ -9,8 +9,9 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddMappings(this IServiceCollection services)
     {
+        var assembly = Assembly.GetCallingAssembly();
         var config = TypeAdapterConfig.GlobalSettings;
-        config.Scan(Assembly.GetExecutingAssembly());
+        config.Scan(assembly);
 
         services.AddSingleton(config);
         services.AddScoped<IMapper, ServiceMapper>();
