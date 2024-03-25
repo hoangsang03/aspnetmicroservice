@@ -59,6 +59,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Configure the HTTP request pipeline.
 app.MapCarter();
 app.UseAuthorization();
 
