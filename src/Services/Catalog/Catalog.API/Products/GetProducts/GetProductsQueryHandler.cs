@@ -4,9 +4,7 @@ public record GetProductsQuery() : IQuery<GetProductsResult>;
 
 public record GetProductsResult(IEnumerable<ProductDto> Products, int Total);
 
-
-
-public class GetProductsQueryHandler(IDocumentSession session, ILogger<GetProductsQueryHandler> logger) : IQueryHandler<GetProductsQuery, GetProductsResult>
+internal class GetProductsQueryHandler(IDocumentSession session, ILogger<GetProductsQueryHandler> logger) : IQueryHandler<GetProductsQuery, GetProductsResult>
 {
     public async Task<GetProductsResult> Handle(GetProductsQuery query, CancellationToken cancellationToken)
     {

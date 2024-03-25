@@ -4,7 +4,7 @@ public record DeleteProductCommand(Guid Id) : IQuery<DeleteProductResult>;
 
 public record DeleteProductResult(bool IsSuccess);
 
-public class DeleteProductHandler(IDocumentSession session) : IQueryHandler<DeleteProductCommand, DeleteProductResult>
+internal class DeleteProductCommandHandler(IDocumentSession session) : IQueryHandler<DeleteProductCommand, DeleteProductResult>
 {
     public async Task<DeleteProductResult> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
