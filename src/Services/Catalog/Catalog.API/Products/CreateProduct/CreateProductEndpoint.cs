@@ -8,6 +8,7 @@ public class CreateProductEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
+        //POST: "/products"
         app.MapPost("/products",
         async (CreateProductRequest request, ISender sender) =>
         {
@@ -20,12 +21,12 @@ public class CreateProductEndpoint : ICarterModule
             return Results.Created($"/products/{response.Id}", response);
 
         })
-        .WithTags("Product")
+        .WithTags(Constants.TAG_PRODUCT)
         .WithName("CreateProduct")
         .Produces<CreateProductResponse>(StatusCodes.Status201Created)
         .ProducesProblem(StatusCodes.Status400BadRequest)
-        .WithSummary("Create Product")
-        .WithDescription("Create Product")
+        .WithSummary("Create Product API")
+        .WithDescription("Add A New Product With The Supplied Information")
         .WithOpenApi();
     }
 }
